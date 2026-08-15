@@ -1,0 +1,44 @@
+﻿// Copyright 2026 Robert Adams
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+using org.herbal3d.mblue.Statistics;
+
+namespace org.herbal3d.mblue.comm
+{
+
+    public delegate void ConnectionFailureCallback(ICommProvider source, string reason);
+
+    public interface ICommProvider
+    {
+        string Name { get; }
+
+        Task StartAsync(CancellationToken cancellationToken);
+
+        Task StopAsync(CancellationToken cancellationToken);
+
+        bool IsConnected { get; }
+
+        bool IsLoggedIn { get; }
+
+        Task<LoginResponse?> StartLogin(LoginParams parms);
+
+        bool StartLogout();
+
+        bool StartTeleport(string destination);
+
+        // kludge to get underlying LL Comm (circular ref Comm.LLLP <=> World.LL)
+        // 20260807 is this still needed?
+        // OMV.GridClient GridClient { get; }
+
+        // each comm provider has a block of statistics
+        StatisticCollection CommStatistics { get; }
+    }
+}

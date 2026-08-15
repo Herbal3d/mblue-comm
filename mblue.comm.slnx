@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/mblue.comm/mblue.comm.csproj" />
+    <Project Path="src/mblue.comm.Interface/mblue.comm.Interface.csproj" />
+  </Folder>
+</Solution>

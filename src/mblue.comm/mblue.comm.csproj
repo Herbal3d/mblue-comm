@@ -25,10 +25,10 @@
     <PackageReference Include="mblue.common" Version="*" />
   </ItemGroup>
 
-  <ItemGroup Condition="Exists('../../../mblue.comm.os/src/mblue.comm_os.csproj')">
-    <ProjectReference Include="../../../mblue.comm.os/src/mblue.comm_os.csproj" />
+  <ItemGroup Condition="Exists('../../../mblue.comm.os/src/mblue.comm.os.csproj')">
+    <ProjectReference Include="../../../mblue.comm.os/src/mblue.comm.os.csproj" />
   </ItemGroup>
-  <ItemGroup Condition="!Exists('../../../mblue.comm.os/src/mblue.comm_os.csproj')">
+  <ItemGroup Condition="!Exists('../../../mblue.comm.os/src/mblue.comm.os.csproj')">
     <PackageReference Include="mblue.comm.os" Version="*" />
   </ItemGroup>
 

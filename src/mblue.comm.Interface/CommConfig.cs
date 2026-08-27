@@ -9,7 +9,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace org.herbal3d.mblue.comm {
+namespace org.herbal3d.mblue.Config {
 
     public class CommConfig {
         public static string subSectionName { get; set; } = "Comm";

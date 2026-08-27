@@ -12,6 +12,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using org.herbal3d.mblue.Config;
+
 namespace org.herbal3d.mblue.comm {
 
     public static class MBlueCommServiceSetup {
@@ -20,7 +22,7 @@ namespace org.herbal3d.mblue.comm {
             return pServices
                 .Configure<CommConfig>(pConfig.GetSection(CommConfig.subSectionName))
                 // For the moment, just select the one provider we have
-                .AddSingleton<ICommProvider, CommLLLP>()
+                .AddHostedService<CommService>()
             ;
         }
     }

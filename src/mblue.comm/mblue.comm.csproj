@@ -18,17 +18,17 @@
     <ProjectReference Include="../mblue.comm.Interface/mblue.comm.Interface.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="Exists('../../../mblue.common/src/mblue.common.csproj')">
-    <ProjectReference Include="../../../mblue.common/src/mblue.common.csproj" />
+  <ItemGroup Condition="Exists('../../../mblue-common/src/mblue.common.csproj')">
+    <ProjectReference Include="../../../mblue-common/src/mblue.common.csproj" />
   </ItemGroup>
-  <ItemGroup Condition="!Exists('../../../mblue.common/src/mblue.common.csproj')">
+  <ItemGroup Condition="!Exists('../../../mblue-common/src/mblue.common.csproj')">
     <PackageReference Include="mblue.common" Version="*" />
   </ItemGroup>
 
-  <ItemGroup Condition="Exists('../../../mblue.comm.os/src/mblue.comm.os.csproj')">
-    <ProjectReference Include="../../../mblue.comm.os/src/mblue.comm.os.csproj" />
+  <ItemGroup Condition="Exists('../../../mblue-comm-os/src/mblue.comm.os.csproj')">
+    <ProjectReference Include="../../../mblue-comm-os/src/mblue.comm.os.csproj" />
   </ItemGroup>
-  <ItemGroup Condition="!Exists('../../../mblue.comm.os/src/mblue.comm.os.csproj')">
+  <ItemGroup Condition="!Exists('../../../mblue-comm-os/src/mblue.comm.os.csproj')">
     <PackageReference Include="mblue.comm.os" Version="*" />
   </ItemGroup>
 

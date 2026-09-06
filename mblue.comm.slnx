@@ -4,5 +4,7 @@
     <Project Path="src/mblue.comm.Interface/mblue.comm.Interface.csproj" />
   </Folder>
   <Project Path="../mblue-common/src/mblue.common.csproj" />
+  <!--
   <Project Path="../mblue-comm-os/src/mblue.comm.os.csproj" />
+  -->
 </Solution>

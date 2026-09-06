@@ -22,7 +22,8 @@ namespace org.herbal3d.mblue.comm {
             return pServices
                 .Configure<CommConfig>(pConfig.GetSection(CommConfig.subSectionName))
                 // For the moment, just select the one provider we have
-                .AddHostedService<CommService>()
+                .AddSingleton<ICommProvider, DummyComm>()
+            // .AddHostedService<CommService>()
             ;
         }
     }

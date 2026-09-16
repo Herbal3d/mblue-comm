@@ -11,13 +11,11 @@
 
 using org.herbal3d.mblue.Statistics;
 
-namespace org.herbal3d.mblue.comm
-{
+namespace org.herbal3d.mblue.comm {
 
     public delegate void ConnectionFailureCallback(ICommProvider source, string reason);
 
-    public interface ICommProvider
-    {
+    public interface ICommProvider {
         string Name { get; }
 
         Task StartAsync(CancellationToken cancellationToken);
@@ -28,11 +26,11 @@ namespace org.herbal3d.mblue.comm
 
         bool IsLoggedIn { get; }
 
-        Task<LoginResponse?> StartLogin(LoginParams parms);
+        Task<LoginResponse?> StartLogin(LoginParams parms, CancellationToken cancellationToken);
 
-        bool StartLogout();
+        Task<bool> StartLogout(CancellationToken cancellationToken);
 
-        bool StartTeleport(string destination);
+        Task<bool> StartTeleport(string destination, CancellationToken cancellationToken);
 
         // kludge to get underlying LL Comm (circular ref Comm.LLLP <=> World.LL)
         // 20260807 is this still needed?

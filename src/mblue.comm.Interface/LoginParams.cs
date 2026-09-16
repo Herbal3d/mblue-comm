@@ -27,6 +27,18 @@ namespace org.herbal3d.mblue.comm {
         public virtual string? HomeURL { get; set; }
         public virtual string? Grid { get; set; }
 
+        public void FromJson(JsonNode? osd) {
+            if (osd is JsonObject map) {
+                UserName = map["UserName"]?.ToString();
+                Password = map["Password"]?.ToString();
+                AuthURL = map["AuthURL"]?.ToString();
+                FirstName = map["FirstName"]?.ToString();
+                LastName = map["LastName"]?.ToString();
+                StartLocation = map["StartLocation"]?.ToString();
+                HomeURL = map["HomeURL"]?.ToString();
+                Grid = map["Grid"]?.ToString();
+            }
+        }
         /*
         public void FromOSD(OMVSD.OSD osd) {
             if (osd is OMVSD.OSDMap map) {
@@ -43,7 +55,11 @@ namespace org.herbal3d.mblue.comm {
         */
     }
 
+    // A minimal, common response structure for login attempts.
     public class LoginResponse {
         public bool Success;
+        public string? Message;
+        public string? Reason;
+        public ulong SessionID;
     }
 }

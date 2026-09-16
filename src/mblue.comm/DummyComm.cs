@@ -33,24 +33,24 @@ namespace org.herbal3d.mblue.comm {
             return Task.CompletedTask;
         }
 
-        public Task<LoginResponse?> StartLogin(LoginParams parms) {
+        public Task StopAsync(CancellationToken cancellationToken) {
+            _log.LogInfo("StopAsync DummyComm...");
+            return Task.CompletedTask;
+        }
+
+        public Task<LoginResponse?> StartLogin(LoginParams parms, CancellationToken cancellationToken) {
             _log.LogInfo("StartLogin DummyComm...");
             return Task.FromResult<LoginResponse?>(null);
         }
 
-        public bool StartLogout() {
+        public async Task<bool> StartLogout(CancellationToken cancellationToken) {
             _log.LogInfo("StartLogout DummyComm...");
             return false;
         }
 
-        public bool StartTeleport(string destination) {
+        public async Task<bool> StartTeleport(string destination, CancellationToken cancellationToken) {
             _log.LogInfo($"StartTeleport DummyComm to {destination}...");
             return false;
-        }
-
-        public Task StopAsync(CancellationToken cancellationToken) {
-            _log.LogInfo("StopAsync DummyComm...");
-            return Task.CompletedTask;
         }
     }
 }

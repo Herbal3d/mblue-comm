@@ -9,6 +9,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
 using System.Text.Json.Nodes;
 
 namespace org.herbal3d.mblue.comm {
@@ -60,6 +61,6 @@ namespace org.herbal3d.mblue.comm {
         public bool Success;
         public string? Message;
         public string? Reason;
-        public ulong SessionID;
+        public Guid SessionID;
     }
 }

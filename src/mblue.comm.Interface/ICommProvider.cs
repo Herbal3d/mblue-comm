@@ -32,10 +32,6 @@ namespace org.herbal3d.mblue.comm {
 
         Task<bool> StartTeleport(string destination, CancellationToken cancellationToken);
 
-        // kludge to get underlying LL Comm (circular ref Comm.LLLP <=> World.LL)
-        // 20260807 is this still needed?
-        // OMV.GridClient GridClient { get; }
-
         // each comm provider has a block of statistics
         StatisticCollection CommStatistics { get; }
     }
